@@ -1,0 +1,52 @@
+generated: '2026-08-04'
+method: probed
+source: live DNS/TLS/HTTP probes of the Dunzo registrable domains
+note: >-
+  Dunzo was dissolved on 2025-01-14 and its app and website were shut down. No Dunzo-operated
+  host resolves. dunzo.com answers NOERROR/NODATA (registry delegation to BigRock nameservers,
+  registrant now the privacy proxy "Domains By Proxy, LLC" as of the 2026-02-24 whois update) and
+  serves no A, AAAA, MX, TXT, CAA or DS record; dunzo.in delegation is broken (SERVFAIL). There is
+  therefore no TLS, HSTS, SPF or DMARC posture to measure. The earlier automated run of
+  0-working/probe-domain-security.py measured forgeglobal.com — the third-party secondary-market
+  listing host recorded as the harvest source — which is not a Dunzo host; that result was removed
+  as a misattribution.
+hosts: []
+domains:
+- domain: dunzo.com
+  resolves: false
+  dns_status: NOERROR-NODATA
+  https: false
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+  registrar: GoDaddy.com, LLC
+  registrant_organization: Domains By Proxy, LLC
+  nameservers:
+  - DNS1.BIGROCK.IN
+  - DNS2.BIGROCK.IN
+  - DNS3.BIGROCK.IN
+  - DNS4.BIGROCK.IN
+  whois_updated: '2026-02-24'
+  whois_expires: '2028-01-26'
+- domain: dunzo.in
+  resolves: false
+  dns_status: SERVFAIL
+  https: false
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+x-evidence:
+- probed: '2026-08-04'
+  check: dig A/AAAA/NS/MX/TXT/CAA/DS dunzo.com
+  result: NOERROR with no answer records
+- probed: '2026-08-04'
+  check: dig NS dunzo.in
+  result: SERVFAIL (broken delegation)
+- probed: '2026-08-04'
+  check: curl https://dunzo.com/ (and www., api., apis.dunzo.in, developers., docs., business.)
+  result: 'curl (6) could not resolve host — every candidate host'
+- probed: '2026-08-04'
+  check: whois dunzo.com
+  result: registrant is Domains By Proxy, LLC; nameservers BigRock; updated 2026-02-24

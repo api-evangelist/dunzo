@@ -1,0 +1,53 @@
+generated: '2026-08-04'
+method: searched
+source: https://en.wikipedia.org/wiki/Dunzo
+status: retired
+summary: >-
+  Dunzo Digital Private Limited ceased operations. The company was dissolved on 2025-01-14 and both
+  the consumer app and the dunzo.com website stopped working. Founder and CEO Kabeer Biswas departed
+  for Flipkart, and Reliance Retail — which had taken a 25.8% stake for USD 200 million in January
+  2022 — wrote off its investment. Every Dunzo-operated host, including the Dunzo for Business
+  merchant API surface, is offline; the company publishes no developer portal, documentation,
+  specification, status page, changelog or support channel.
+company:
+  founded: '2014-07'
+  founders: [Kabeer Biswas, Ankur Agarwal, Dalvir Suri, Mukund Jha]
+  headquarters: Indiranagar, Bengaluru, Karnataka, India
+  dissolved: '2025-01-14'
+api_surface:
+  present: false
+  historical: true
+  note: >-
+    Dunzo for Business (D4B) offered merchant API integration for last-mile hyperlocal delivery
+    (task creation, delivery quotes, order tracking, webhooks) to partners in up to nine Indian
+    cities, and was reachable through third-party multi-carrier aggregators such as ClickPost and
+    Shipway. Dunzo never published a public developer portal, OpenAPI/Swagger document, llms.txt or
+    any /.well-known/ discovery document — the Internet Archive records only 404s for every
+    /.well-known/ path on www.dunzo.com and holds no archived specification. The only archived API
+    host, api.dunzo.in, is captured solely as /api/v1/token (HTTP 400) and /robots.txt (404); it no
+    longer resolves.
+  retired_hosts:
+  - host: api.dunzo.in
+    evidence: web.archive.org CDX — https://api.dunzo.in/api/v1/token (400), /robots.txt (404)
+    resolves: false
+  - host: www.dunzo.com
+    evidence: web.archive.org CDX — all /.well-known/* paths 404; no spec archived
+    resolves: false
+versioning: null
+deprecation: null
+sla: null
+status_page: null
+deprecated_operations: []
+x-evidence:
+- fetched: '2026-08-04'
+  url: https://en.wikipedia.org/wiki/Dunzo
+  claim: dissolved 2025-01-14; app and website shut down; Reliance write-off
+- fetched: '2026-08-04'
+  url: https://restofworld.org/2025/dunzo-shutdown-india-quick-commerce/
+  claim: reporting on the shutdown of the Indian hyperlocal delivery pioneer
+- probed: '2026-08-04'
+  url: http://web.archive.org/cdx/search/cdx?url=dunzo.com*
+  claim: no openapi/swagger/apis.json/llms.txt ever archived; every /.well-known/* path 404
+- probed: '2026-08-04'
+  check: DNS + HTTP probes of dunzo.com, dunzo.in and all api/docs/developer subdomains
+  claim: no Dunzo host resolves

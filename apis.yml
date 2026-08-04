@@ -1,17 +1,34 @@
 aid: dunzo
 name: Dunzo
-description: 'Dunzo is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Dunzo was an Indian hyperlocal delivery and quick-commerce platform founded in July 2014 in
+  Bengaluru by Kabeer Biswas, Ankur Agarwal, Dalvir Suri and Mukund Jha, which grew from a WhatsApp
+  group into an app-based service delivering groceries, food, medicines, pet supplies and same-city
+  packages across up to nine Indian cities. Its Dunzo for Business (D4B) offering gave merchants
+  last-mile delivery through a partner API and through multi-carrier aggregators. Backed by Google,
+  Blume Ventures, Alteria Capital and Reliance Retail, the company was dissolved on 14 January 2025;
+  the app and website were shut down and every Dunzo-operated host, including its merchant API, is
+  now offline. This profile is retained as a historical record — Dunzo publishes no developer
+  portal, documentation, specification or support channel today.
 url: https://raw.githubusercontent.com/api-evangelist/dunzo/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
 x-tier-reason: harvest
+x-status: defunct
 specificationVersion: '0.20'
 created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
+- Delivery
+- Last Mile Delivery
+- Hyperlocal
+- Quick Commerce
+- Logistics
+- E-Commerce
+- India
+- Defunct
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +36,14 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/dunzo-domain-security.yml
+- type: Lifecycle
+  url: lifecycle/dunzo-lifecycle.yml
 - type: Website
   url: https://forgeglobal.com/dunzo_stock/
+x-enrichment:
+  date: '2026-08-04'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
