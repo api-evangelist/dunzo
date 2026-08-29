@@ -11,6 +11,7 @@ description: >-
   now offline. This profile is retained as a historical record — Dunzo publishes no developer
   portal, documentation, specification or support channel today.
 url: https://raw.githubusercontent.com/api-evangelist/dunzo/refs/heads/main/apis.yml
+x-harvest-source-url: https://forgeglobal.com/dunzo_stock/
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -51,8 +52,6 @@ common:
   url: security/dunzo-domain-security.yml
 - type: Lifecycle
   url: lifecycle/dunzo-lifecycle.yml
-- type: Website
-  url: https://forgeglobal.com/dunzo_stock/
 x-enrichment:
   date: '2026-08-04'
   status: minimal
